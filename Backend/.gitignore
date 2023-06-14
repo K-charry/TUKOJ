@@ -160,6 +160,4 @@ cython_debug/
 #.idea/
 
 secrets.json
-poetry.lock
-pyproject.toml
 db_host.py

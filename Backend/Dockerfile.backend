@@ -9,8 +9,14 @@ ENV PYTHONUNBUFFERED 1
 WORKDIR /code
 
 # Install dependencies
-COPY ./backend/pyproject.toml /code/
-RUN pip install poetry && poetry install
+COPY ./pyproject.toml /code/
+RUN pip install --upgrade pip
+RUN pip install poetry || (echo "Poetry install failed" && exit 1)
+RUN poetry --version || (echo "Poetry is not installed correctly" && exit 1)
+RUN poetry config virtualenvs.create false
+RUN poetry install || (echo "Poetry dependencies installation failed" && exit 1)
 
 # Copy project
-COPY ./backend /code/
+COPY . /code/
+
+CMD ["gunicorn", "config.wsgi:application", "--bind", "0.0.0.0:8000"]
