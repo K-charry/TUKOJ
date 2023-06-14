@@ -1,0 +1,438 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+.container {
+  max-width: 2xl;
+  margin: 0 auto;
+
+  padding: 16px;
+}
+.container2 {
+  display: grid;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+@media (min-width: 1024px) {
+  .container2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+.level-label{
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #374151;
+}
+#level{
+  background-color: #f1f5f9;
+border: 1px solid #d1d5db;
+color: #374151;
+font-size: 14px;
+border-radius: 0.375rem;
+padding: 0.625rem;
+width: 30%;
+}
+  label[for="title"] {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #374151;
+  }
+
+  input#title {
+    background-color: #F9FAFB;
+    border: 1px solid #D1D5DB;
+    color: #4B5563;
+    font-size: 0.875rem;
+    border-radius: 0.375rem;
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+    transition: all 0.3s ease-in-out;
+    padding: 0.625rem;
+    display: block;
+    width: 100%;
+  }
+
+  input#title:focus {
+    border-color: #3B82F6;
+    outline-color: #3B82F6;
+  }
+  input#title::placeholder {
+    color: #9CA3AF;
+  }
+  input#title.dark {
+    background-color: #1F2937;
+    border-color: #4B5563;
+    color: #D1D5DB;
+  }
+  input#title.dark::placeholder {
+    color: #6B7280;
+  }
+  input#title.dark:focus {
+    border-color: #60A5FA;
+    outline-color: #60A5FA;
+  }
+
+  label[for="description"] {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #374151;
+  }
+#title{
+  display: block;
+    width: 100%;
+    padding: 0.625rem;
+    font-size: 0.875rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #4b5563;
+    background-color: #f9fafb;
+    border: 1px solid #e5e7eb;
+    border-radius: 0.375rem;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  overflow: auto; /* 내용이 넘칠 경우 스크롤을 생성합니다. */
+  min-height: 100px; /* 최소 높이를 지정합니다. 필요에 따라 조절해주세요. */
+  min-width: 100px; /* 최소 높이를 지정합니다. 필요에 따라 조절해주세요. */
+}
+  #description {
+    display: block;
+    width: 100%;
+    padding: 0.625rem;
+    font-size: 0.875rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #4b5563;
+    background-color: #f9fafb;
+    border: 1px solid #e5e7eb;
+    border-radius: 0.375rem;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+
+  overflow: auto; /* 내용이 넘칠 경우 스크롤을 생성합니다. */
+  min-height: 100px; /* 최소 높이를 지정합니다. 필요에 따라 조절해주세요. */
+  min-width: 100px; /* 최소 높이를 지정합니다. 필요에 따라 조절해주세요. */
+  }
+
+  #description:focus {
+    border-color: #3b82f6;
+    outline: 0;
+    box-shadow: 0 0 0 0.125em rgba(59, 130, 246, 0.25);
+  }
+
+  #description::placeholder {
+    color: #9ca3af;
+  }
+
+  #description.dark {
+    background-color: #374151;
+    border-color: #4b5563;
+    color: #f9fafb;
+  }
+
+  #description.dark:focus {
+    border-color: #60a5fa;
+    box-shadow: 0 0 0 0.125em rgba(96, 165, 250, 0.25);
+  }
+
+  #description.dark::placeholder {
+    color: #6b7280;
+  }
+
+  #input_format-label {
+
+    display: block;
+    width: 100%;
+    padding: 0.625rem;
+    font-size: 0.875rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #4b5563;
+    background-color: #f9fafb;
+    border: 1px solid #e5e7eb;
+    border-radius: 0.375rem;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    }
+
+    #input_format {
+
+    display: block;
+    width: 100%;
+    padding: 0.625rem 1.5rem;
+    font-size: 0.875rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #374151;
+    background-color: #F3F4F6;
+    border: 1px solid #D1D5DB;
+    border-radius: 0.375rem;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    overflow: auto; /* 내용이 넘칠 경우 스크롤을 생성합니다. */
+  min-height: 100px; /* 최소 높이를 지정합니다. 필요에 따라 조절해주세요. */
+  min-width: 100px; /* 최소 높이를 지정합니다. 필요에 따라 조절해주세요. */
+    }
+
+    #input_format:focus {
+    outline: 0;
+    border-color: #2563EB;
+    box-shadow: 0 0 0 0.25rem rgba(37, 99, 235, 0.25);
+    }
+
+    @media (prefers-color-scheme: dark) {
+    #input_format-label {
+    color: #D1D5DB;
+    }
+
+    #input_format {
+    color: #D1D5DB;
+    background-color: #374151;
+    border-color: #4B5563;
+    }
+
+    #input_format:focus {
+    border-color: #2563EB;
+    box-shadow: 0 0 0 0.25rem rgba(37, 99, 235, 0.25);
+    }
+    }
+
+    label[for="output_format"] {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: #374151;
+    }
+
+    input#output_format {
+      display: block;
+      width: 100%;
+      padding: 0.625rem;
+      font-size: 0.875rem;
+      line-height: 1.25rem;
+      color: #374151;
+      background-color: #F3F4F6;
+      border: 1px solid #D1D5DB;
+      border-radius: 0.375rem;
+      transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    }
+
+    input#output_format:focus {
+      outline: none;
+      border-color: #93C5FD;
+      box-shadow: 0 0 0 0.125rem rgba(59, 130, 246, 0.25);
+    }
+
+    input#output_format::placeholder {
+      color: #9CA3AF;
+    }
+
+
+    label[for="hint"] {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: #374151;
+    }
+
+    #hint {
+      display: block;
+      width: 100%;
+      padding: 0.625rem 1.25rem;
+      font-size: 0.875rem;
+      font-weight: 400;
+      line-height: 1.5;
+      color: #374151;
+      background-color: #f9fafb;
+      border: 1px solid #e5e7eb;
+      border-radius: 0.375rem;
+      transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+      overflow: auto; /* 내용이 넘칠 경우 스크롤을 생성합니다. */
+  min-height: 100px; /* 최소 높이를 지정합니다. 필요에 따라 조절해주세요. */
+  min-width: 100px; /* 최소 높이를 지정합니다. 필요에 따라 조절해주세요. */
+    }
+
+    #hint:focus {
+      outline: none;
+      border-color: #93c5fd;
+      box-shadow: 0 0 0 0.125rem rgba(59, 130, 246, 0.25);
+    }
+
+    #hint::placeholder {
+      color: #9ca3af;
+    }
+
+    .language-checkbox {
+      display: inline-block;;
+      align-items: center;
+      height: 2.5rem;
+    }
+
+    .language-checkbox label {
+      margin-right: 30px;
+      position: relative;
+    }
+
+    .language-checkbox input[type="checkbox"] {
+      width: 1rem;
+      height: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 0.25rem;
+      background-color: #f9fafb;
+      transition: border-color 0.2s ease-in-out, background-color 0.2s ease-in-out;
+    }
+
+    .language-checkbox input[type="checkbox"]:focus,
+    .language-checkbox input[type="checkbox"]:hover {
+      border-color: #93c5fd;
+    }
+
+    .language-checkbox input[type="checkbox"]:checked {
+      border-color: #93c5fd;
+      background-color: #93c5fd;
+    }
+
+    .language-checkbox input[type="checkbox"]:checked:focus,
+    .language-checkbox input[type="checkbox"]:checked:hover {
+      border-color: #93c5fd;
+      background-color: #6b8eae;
+    }
+
+    .language-checkbox label:hover::before {
+      content: attr(title);
+      position: absolute;
+      top: -1.5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      padding: 0.25rem 0.5rem;
+      background-color: #1a202c;
+      color: #fff;
+      font-size: 0.75rem;
+      border-radius: 0.25rem;
+      white-space: nowrap;
+    }
+    .language-checkbox label:hover::after {
+      content: attr(title);
+      display: block;
+      position: absolute;
+      bottom: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      padding: 0.25rem 0.5rem;
+      border-radius: 0.25rem;
+      background-color: #4b5563;
+      color: #f9fafb;
+      font-size: 0.75rem;
+      white-space: nowrap;
+    }
+
+
+    .submit-btn {
+      display: inline-block;
+      color: #fff;
+      border: none;
+      border-radius: 0.25rem;
+      font-size: 1rem;
+      font-weight: 500;
+      line-height: 1.5;
+      padding: 0.5rem 1rem;
+      cursor: pointer;
+      transition: all 0.3s ease-in-out;
+    }
+
+    .submit-btn:hover {
+      background-color: hsl(205, 89%, 70%);
+      color: #fff;
+    }
+
+    .submit-btn:focus {
+      outline: none;
+      box-shadow: 0 0 0 3px rgba(74, 156, 219, 0.4);
+    }
+
+    .submit-btn:active {
+      transform: translateY(1px);
+    }
+.btn{
+  background-color: #131F89;
+  display: inline-block;
+  border-radius: 0.25rem;
+}
+
+#output_format {
+
+  display: block;
+  width: 100%;
+  padding: 0.625rem 1.5rem;
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #374151;
+  background-color: #F3F4F6;
+  border: 1px solid #D1D5DB;
+  border-radius: 0.375rem;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  overflow: auto; /* 내용이 넘칠 경우 스크롤을 생성합니다. */
+min-height: 100px; /* 최소 높이를 지정합니다. 필요에 따라 조절해주세요. */
+min-width: 100px; /* 최소 높이를 지정합니다. 필요에 따라 조절해주세요. */
+  }
+  .create-problem-btn {
+    display: inline-block;
+    color: #fff;
+    background-color: #131F89;
+    border: none;
+    border-radius: 0.25rem;
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 1.5;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .create-problem-btn:hover {
+    background-color: hsl(205, 89%, 70%);
+  }
+
+  .create-problem-btn:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(74, 156, 219, 0.4);
+  }
+
+  .create-problem-btn:active {
+    transform: translateY(1px);
+  }
+  .edit-btn,
+  .delete-btn {
+    display: inline-block;
+    color: #fff;
+    background-color: #131F89;
+    border: none;
+    border-radius: 0.25rem;
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 1.5;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .edit-btn:hover,
+  .delete-btn:hover {
+    background-color: hsl(205, 89%, 70%);
+  }
+
+  .edit-btn:focus,
+  .delete-btn:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(220, 53, 69, 0.4);
+  }
+
+  .edit-btn:active,
+  .delete-btn:active {
+    transform: translateY(1px);
+  }

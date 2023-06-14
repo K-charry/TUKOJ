@@ -1,0 +1,119 @@
+@import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
+
+/* 공지사항 목록과 문제 목록의 창을 겹치도록 설정합니다. */
+.container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  min-height: 100vh;
+  position: relative; /* 위치 설정을 위해 필요한 속성 */
+  z-index: 2; /* 게시판을 그림 위로 올리기 위한 속성 */
+  min-height: calc(100vh - 40px); /* footer 높이만큼 뺀 값으로 설정 */
+}
+.main-tino-container {
+  position: relative;
+  z-index: 1;
+  bottom: -65px;
+}
+.main-tino {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 43%;
+  min-width: 390px;
+}
+
+.notice-container {
+  position: relative;
+  margin: 0 auto;
+  margin-top: 20px; /* 상단 간격 조정 */
+  background-color: #FFFFFF;
+  width: 60%; /* 크기를 줄이기 위한 값 설정 */
+  max-width: 500px; /* 크기를 줄이기 위한 값 설정 */
+  padding: 10px; /* 내용과 테두리 간격 조정 */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  border-radius: 20px; /* 테두리의 둥글기 조정 */
+  top: -40px; /* 원하는 값으로 조정 */
+  right: 200px;
+  border: 2px solid black;
+}
+
+  .problem-container{
+  position: relative;
+  margin: 0 auto;
+  margin-top: 20px; /* 상단 간격 조정 */
+  background-color: #FFFFFF;
+  width: 60%; /* 크기를 줄이기 위한 값 설정 */
+  max-width: 500px; /* 크기를 줄이기 위한 값 설정 */
+  padding: 10px; /* 내용과 테두리 간격 조정 */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  border-radius: 20px; /* 테두리의 둥글기 조정 */
+  top: -40px; /* 원하는 값으로 조정 */
+  right: 200px;
+  border: 2px solid black;
+  }
+
+  .notice-container h2 {
+    text-align: center; /* 글자 가운데 정렬 */
+    font-weight: 600;
+    font-size: large;
+    font-style: normal;
+    font-family: 'Noto Sans KR';
+  }
+
+  .notice-container ul {
+    margin-left: 25px;
+  }
+
+  .notice-container li {
+    margin-bottom: 13px;
+  }
+
+  .notice-container a {
+    color: #005AB5;
+    text-decoration: none;
+    font-weight: bold;
+  }
+
+  .problem-container h2 {
+    text-align: center; /* 글자 가운데 정렬 */
+    font-weight: 600;
+    font-size: large;
+    font-style: normal;
+    font-family: 'Noto Sans KR';
+  }
+
+  .problem-container ul {
+    margin-left: 25px;
+  }
+
+  .problem-container li {
+    margin-bottom: 13px;
+  }
+
+  .problem-container a {
+    color: #005AB5;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  .footer {
+    margin-top: 300px; /* 상단 간격 조정 */
+  }
+  .notice-container ul li a:hover,
+  .problem-container ul li a:hover {
+    text-decoration-line: underline;
+    text-decoration-thickness: 2px; /* 밑줄 굵기 설정 */
+  }
+  .notice-container ul li,
+  .problem-container ul li {
+    border-bottom: 1.6px solid #414141; /* 목록 아이템 사이에 선 추가 */
+    padding-bottom: 3px; /* 선과 목록 아이템 사이의 간격 조정 */
+  }
+  .notice-container ul li::before,
+  .problem-container ul li::before {
+    content: "\2022"; /* 온점(토글) 문자 */
+    display: inline-block;
+    width: 10px;
+    margin-right: 10px; /* 온점과 텍스트 사이 간격 조정 */
+    font-size: 20px; /* 온점의 크기 설정 */
+  }

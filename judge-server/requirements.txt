@@ -1,0 +1,6 @@
+requests==2.25.1
+pandas==1.2.4
+flask
+flask_socketio
+redis
+gunicorn
