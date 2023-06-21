@@ -11,5 +11,5 @@ class Solution(models.Model):
     test_case_results = models.JSONField(null=True)
     execution_result = models.TextField(null=True, blank=True)
 
-    # Foreign key to CodeProblem
+    # Foreign key to CodeProblem 
     problem = models.ForeignKey(CodingProblem, on_delete=models.CASCADE)

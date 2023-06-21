@@ -78,7 +78,7 @@ const BoardUpdate = () => {
         const fetchPost = async () => {
           try {
             const response = await axios.get(
-              `http://127.0.0.1:8000/api/v1/qna/questions/${postId}/`
+              `http://backend:8000/api/v1/qna/questions/${postId}/`
             //   `http://127.0.0.1:8000/api/v1/post/update/${postId}/`
             );
             const postData = response.data;
@@ -113,7 +113,7 @@ const BoardUpdate = () => {
         try {
           await axios.put(
             // `http://127.0.0.1:8000/api/v1/qna/questions/${postId}/`,
-            `http://127.0.0.1:8000/api/v1/qna/questions/update/${postId}/`,
+            `http://backend:8000/api/v1/qna/questions/update/${postId}/`,
             updatedPost
           );
           alert("게시글 수정 성공");

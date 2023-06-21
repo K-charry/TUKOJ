@@ -30,20 +30,10 @@ const Comments = ({ board_id }) => {
   // modal이 보이는 여부 상태
   const [show, setShow] = useState(false);
 
-  // 페이지에 해당하는 댓글 목록은 page 상태가 변경될 때마다 가져옴
-  // 맨 처음 페이지가 1이므로 처음엔 1페이지에 해당하는 댓글을 가져온다
-  // useEffect(() => {
-  //   const getCommentList = async () => {
-  //     const { data } = await axios.get(
-  //       `/api/comment/list?board_id=${board_id}&page_number=${page}&page_size=${5}`
-  //     );
-  //     return data;
-  //   };
-
     useEffect(() => {
       // setDataList(problemdata);
       axios
-        .get("http://127.0.0.1:8000/api/v1/qna/questions/${id}")
+        .get("http://backend:8000/api/v1/qna/questions/${id}")
         .then(function (response) {
           setDataList(response.data);
         })

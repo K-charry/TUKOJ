@@ -67,7 +67,7 @@ function PostViewPage(props) {
  // 게시글 삭제
  const deleteBoard = async () => {
   if (window.confirm('게시글을 삭제하시겠습니까?')){
-    await axios.delete(`http://127.0.0.1:8000/api/v1/qna/questions/${postId}/`).then((res) => {
+    await axios.delete(`http://backend:8000/api/v1/qna/questions/${postId}/`).then((res) => {
       alert('삭제되었습니다.');
       navigate('/qna');
     })
@@ -114,7 +114,7 @@ function PostViewPage(props) {
   
   const fetchPost = async () => {
     try {
-      const response = await axios.get(`http://127.0.0.1:8000/api/v1/qna/questions/${postId}/`);
+      const response = await axios.get(`http://backend:8000/api/v1/qna/questions/${postId}/`);
       if (response.status === 200) {
         setPost(response.data);
       } else {
@@ -133,7 +133,7 @@ function PostViewPage(props) {
     e.preventDefault();
 
     try {
-      const response = await axios.post(`http://127.0.0.1:8000/api/v1/qna/questions/${postId}/answers/`, {
+      const response = await axios.post(`http://backend:8000/api/v1/qna/questions/${postId}/answers/`, {
         answer: comment,
         question: postId
       });

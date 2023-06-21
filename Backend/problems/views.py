@@ -161,7 +161,6 @@ class TestCaseListAPI(APIView):
 
     
 class ScoreView(APIView):
-
     def post(self, request, *args, **kwargs):
         problem_id = request.data.get("problem_id")  # the id of the problem
         code = request.data.get("code")  # the user's code
@@ -177,17 +176,21 @@ class ScoreView(APIView):
             })
 
         # send a request to the scoring server
-        scoring_server_url = "http://localhost:80/run"
+        scoring_server_url = "http://judge-server:5001/run"
         data = {
             "code": code,
             "test_cases": test_cases_list,
         }
-        response = requests.post(scoring_server_url, json=data)
 
-        if response.status_code == 200:
-            # return the results to the front-end
-            return Response(response.json(), status=status.HTTP_200_OK)
-        else:
-            # something went wrong
-            return Response({"error": "Failed to score the code."}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+        try:
+            response = requests.post(scoring_server_url, json=data)
+            response.raise_for_status()
+        except requests.exceptions.HTTPError as err:
+            print(f"HTTP 에러 발생: {err}")
+            return Response({"error": "Failed to score the code due to HTTP error."}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+        except Exception as err:
+            print(f"에러 발생: {err}")
+            return Response({"error": "Failed to score the code due to an error."}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
         
+        # 프론트엔드에 채점결과 리턴
+        return Response(response.json(), status=status.HTTP_200_OK)

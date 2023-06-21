@@ -6,7 +6,7 @@ function DeleteForm({ problem }) {
   const handleSubmit = async () => {
     try {
       await axios.delete(
-        `http://127.0.0.1:8000/api/v1/problems/code/${problem.id}`
+        `http://backend:8000/api/v1/problems/code/${problem.id}`
       );
       alert("문제가 성공적으로 삭제되었습니다!");
     } catch (error) {
@@ -18,7 +18,7 @@ function DeleteForm({ problem }) {
   const handleDelete = async () => {
     try {
       await axios.delete(
-        `http://127.0.0.1:8000/api/v1/problems/code/${problem.id}`
+        `http://backend:8000/api/v1/problems/code/${problem.id}`
       );
       alert("문제가 성공적으로 삭제되었습니다!");
     } catch (error) {

@@ -28,7 +28,7 @@ function ProblemInfoComponent({problemId}) {
   useEffect(() => {
     if (problemId !== undefined) {
        axios
-      .get(`http://127.0.0.1:8000/api/v1/problems/code/${problemId}/`)
+      .get(`http://backend:8000/api/v1/problems/code/${problemId}/`)
       .then(response => {
         setProblemData(response.data);
       })
@@ -112,7 +112,8 @@ function Editor() {
   }
 
   useEffect(() => {
-    const socket = io('http://localhost:80');
+    // 클라이언트(리액트 앱)에서 Flask서버(채점서버)에 연결
+    const socket = io('http://localhost/judge');
     socket.on('test_case_result', (data) => {
       console.log(data);
       setExecutionResult(`Test case input: ${data.input}\nTest case status: ${data.status}\nOutput: ${data.output}\nExpected output: ${data.expected}`);
@@ -125,7 +126,7 @@ function Editor() {
 
   function handleSourceCodeSubmit() {
     axios
-    .post('http://127.0.0.1:8000/api/v1/solutions/submit/', {
+    .post('http://backend:8000/api/v1/solutions/submit/', {
       source_code: sourceCode,
       problem: problemId, //CodingProblem id
     })
@@ -144,7 +145,7 @@ function Editor() {
   useEffect(() => {
     if (problemId !== undefined) {
       axios
-        .get(`http://127.0.0.1:8000/api/v1/problems/code/${problemId}/`)
+        .get(`http://backend:8000/api/v1/problems/code/${problemId}/`)
         .then(response => {
           setProblemData(response.data);
         })
@@ -184,6 +185,7 @@ function Editor() {
               problemId={problemId} 
               executionResult={executionResult} 
               setExecutionResult={setExecutionResult}
+              sourceCode={sourceCode} // 소스 코드를 SourceCodeInputComponent에 전달
               handleSourceCodeChange={handleSourceCodeChange}
               handleSourceCodeSubmit={handleSourceCodeSubmit}
             />

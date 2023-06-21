@@ -50,7 +50,7 @@ function MainCommunity(props) {
 
   useEffect(() => {
     axios
-      .get("http://127.0.0.1:8000/api/v1/qna/questions/")
+      .get("http://backend:8000/api/v1/qna/questions/")
       .then(function (response) {
         console.log(response.data);
         setQnaDataList(response.data);

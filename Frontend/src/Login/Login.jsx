@@ -10,7 +10,7 @@ function Login (props) {
     const handleSubmit = (e) => {
         e.preventDefault();
         //console.log(email);
-        axios.post(`http://127.0.0.1:8000/api/login/`, {email, password})
+        axios.post(`http://backend:8000/api/login/`, {email, password})
             .then((response) => {
                 console.log(response);
                 // 로그인 성공 후 처리할 내용을 여기에 작성합니다.

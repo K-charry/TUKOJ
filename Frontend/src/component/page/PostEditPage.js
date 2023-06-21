@@ -54,7 +54,7 @@ function PostEditPage(props) {
 
   const handleSubmit = async () => {
     try {
-      await axios.put(`http://127.0.0.1:8000/api/v1/qna/questions/${postId}/`, postContent);
+      await axios.put(`http://backend:8000/api/v1/qna/questions/${postId}/`, postContent);
       alert("게시물이 수정되었습니다.");
       navigate("/qna");
     } catch (error) {
@@ -67,7 +67,7 @@ useEffect(() => {
     // 게시물 데이터 가져오기
     const fetchPostData = async () => {
       try {
-        const response = await axios.get(`http://127.0.0.1:8000/api/v1/qna/questions/${postId}`);
+        const response = await axios.get(`http://backend:8000/api/v1/qna/questions/${postId}`);
         const postData = response.data;
         setPostContent({
           title: postData.title,

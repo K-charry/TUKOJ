@@ -93,7 +93,7 @@ function PostWritePage(props) {
 
   const test = () => {
     axios
-      .post("http://127.0.0.1:8000/api/v1/qna/questions/", {
+      .post("http://backend:8000/api/v1/qna/questions/", {
         title: postContent.title,
         question: postContent.question,
       })

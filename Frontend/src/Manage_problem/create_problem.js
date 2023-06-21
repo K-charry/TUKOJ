@@ -65,7 +65,7 @@ function ProblemForm() {
       language: problem.language.toString(),
     };
     try {
-      await axios.post(`http://127.0.0.1:8000/api/v1/problems/`, newProblem);
+      await axios.post(`http://backend:8000/api/v1/problems/`, newProblem);
       alert("문제가 성공적으로 등록되었습니다!");
       navigate("/manage"); // manage 페이지로 이동
     } catch (error) {

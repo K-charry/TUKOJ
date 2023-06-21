@@ -1,4 +1,4 @@
-version: '3'
+version: "3.7"
 services:
   nginx:
       build: 
@@ -8,6 +8,10 @@ services:
         - "80:80"
       depends_on:
         - backend
+        - judge-server
+        - frontend
+      networks:
+        - tukoj_network
 
   backend:
     build: 
@@ -18,15 +22,15 @@ services:
       - ./backend:/code
     depends_on:
       - judge-server
-    ports:
-      - "8000:8000"
+    networks:
+      - tukoj_network
 
   frontend:
     build: 
       context: ./frontend
       dockerfile: Dockerfile.frontend
-    ports:
-      - "3000:80"
+    networks:
+      - tukoj_network
 
   judge-server:
     build:
@@ -34,10 +38,14 @@ services:
       dockerfile: Dockerfile.judgeservice
     volumes:
       - ./judge-server:/app
-    ports:
-      - "5000:5000"
+    networks:
+      - tukoj_network
 
   redis:
-    image: "redis:latest"
-    ports:
-      - "6379:6379"
+    image: "redis:7.0"
+    networks:
+      - tukoj_network
+
+networks:
+  tukoj_network:
+    driver: bridge

@@ -10,7 +10,7 @@ function ShortQuizPage() {
   useEffect(() => {
     // GET request
     axios
-      .get(`http://127.0.0.1:8000/api/v1/problems/blank/${id}/`)
+      .get(`http://backend:8000/api/v1/problems/blank/${id}/`)
       .then(function (response) {
         console.log(response);
         setProblemData(response.data);

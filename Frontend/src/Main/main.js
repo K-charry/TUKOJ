@@ -18,7 +18,7 @@ function Main(props) {
   useEffect(() => {
     // setDataList(problemdata);
     axios
-      .get("http://127.0.0.1:8000/api/v1/problems/list/")
+      .get("http://backend:8000/api/v1/problems/list/")
       .then(function (response) {
         // console.log(response)
         setDataList(response.data.slice(0, 5)); // 처음 5개 요소만 사용
@@ -37,7 +37,7 @@ function Main(props) {
   useEffect(() => {
     // setDataList(problemdata);
     axios
-      .get(`http://127.0.0.1:8000/api/v1/qna/questions/`)
+      .get(`http://backend:8000/api/v1/qna/questions/`)
       .then(function (response) {
         setDataList2(response.data.slice(0, 5)); // 처음 5개 요소만 사용
       })

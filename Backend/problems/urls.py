@@ -11,4 +11,3 @@ urlpatterns = [
     path('testcases/<int:problem_id>/', TestCaseListAPI.as_view(), name='test_case_list'),
     path('score/', ScoreView.as_view(), name='score_code'),
 ]
-

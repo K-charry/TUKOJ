@@ -22,7 +22,7 @@ function ProblemEditForm() {
     const fetchProblem = async () => {
       try {
         const response = await axios.get(
-          `http://127.0.0.1:8000/api/v1/problems/code/${id}/`
+          `http://backend:8000/api/v1/problems/code/${id}/`
         );
         const problemData = response.data;
         setProblem(problemData);
@@ -71,7 +71,7 @@ function ProblemEditForm() {
     };
     try {
       await axios.put(
-        `http://127.0.0.1:8000/api/v1/problems/code/${id}/`,
+        `http://backend:8000/api/v1/problems/code/${id}/`,
         updatedProblem
       );
       alert("문제가 성공적으로 수정되었습니다!");

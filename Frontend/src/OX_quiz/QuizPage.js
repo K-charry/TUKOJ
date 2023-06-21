@@ -11,7 +11,7 @@ function QuizPage() {
   useEffect(() => {
     // GET 요청
     axios
-      .get(`http://127.0.0.1:8000/api/v1/problems/select/1/`)
+      .get(`http://backend:8000/api/v1/problems/select/1/`)
       .then(function (response) {
         console.log(response);
         setProblemData(response.data);

@@ -66,7 +66,7 @@ const ProblemList = (props) => {
   useEffect(() => {
     // setDataList(problemdata);
     axios
-      .get("http://127.0.0.1:8000/api/v1/problems/list/")
+      .get("http://backend:8000/api/v1/problems/list/")
       .then(function (response) {
         // const slicedData = response.data.slice(offset, offset + limit);
         console.log(response)

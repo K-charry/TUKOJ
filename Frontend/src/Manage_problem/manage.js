@@ -37,7 +37,7 @@ const Manage = () => {
 
   useEffect(() => {
     axios
-      .get("http://127.0.0.1:8000/api/v1/problems/list/")
+      .get("http://backend:8000/api/v1/problems/list/")
       .then(function (response) {
         console.log(response);
         setDataList(response.data);
@@ -49,7 +49,7 @@ const Manage = () => {
 
   const deleteProblem = async (id) => {
     try {
-      await axios.delete(`http://127.0.0.1:8000/api/v1/problems/code/${id}/`);
+      await axios.delete(`http://backend:8000/api/v1/problems/code/${id}/`);
       const updatedDataList = dataList.filter((problem) => problem.id !== id);
       setDataList(updatedDataList);
       alert("문제가 성공적으로 삭제되었습니다!");

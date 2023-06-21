@@ -22,7 +22,7 @@ function Communitylist(props) {
   useEffect(() => {
     // setDataList(problemdata);
     axios
-      .get("http://127.0.0.1:8000/api/v1/qna/questions/${id}")
+      .get("http://backend:8000/api/v1/qna/questions/${id}")
       .then(function (response) {
         setDataList(response.data);
       })
